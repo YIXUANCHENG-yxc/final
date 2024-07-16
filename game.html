@@ -28,9 +28,36 @@
                     <option value="Madrid">Madrid</option>
                 </select>
             </div>
-
-            <!-- More questions can be added here following the same structure -->
-
+            <div class="question">
+                <p>2. What is the largest planet in our solar system?</p>
+                <select id="question2">
+                    <option value="">--Please choose an option--</option>
+                    <option value="Jupiter">Jupiter</option>
+                    <option value="Mars">Mars</option>
+                    <option value="Earth">Earth</option>
+                    <option value="Venus">Venus</option>
+                </select>
+            </div>
+            <div class="question">
+                <p>3. What element does 'O' represent on the periodic table?</p>
+                <select id="question3">
+                    <option value="">--Please choose an option--</option>
+                    <option value="Oxygen">Oxygen</option>
+                    <option value="Gold">Gold</option>
+                    <option value="Silver">Silver</option>
+                    <option value="Iron">Iron</option>
+                </select>
+            </div>
+            <div class="question">
+                <p>4. What year did the Titanic sink?</p>
+                <select id="question4">
+                    <option value="">--Please choose an option--</option>
+                    <option value="1912">1912</option>
+                    <option value="1905">1905</option>
+                    <option value="1898">1898</option>
+                    <option value="1923">1923</option>
+                </select>
+            </div>
             <button type="submit">Submit Answers</button>
         </form>
     </main>
@@ -43,18 +70,26 @@
             var score = 0;
             var answers = {
                 question1: "Paris",
-                // Add more answers as needed
+                question2: "Jupiter",
+                question3: "Oxygen",
+                question4: "1912"
             };
 
             if (document.getElementById('question1').value === answers.question1) {
-                score += 20;
+                score += 25;
             }
-
-            // Check other questions similarly and update the score
+            if (document.getElementById('question2').value === answers.question2) {
+                score += 25;
+            }
+            if (document.getElementById('question3').value === answers.question3) {
+                score += 25;
+            }
+            if (document.getElementById('question4').value === answers.question4) {
+                score += 25;
+            }
 
             alert("Your final score is: " + score);
         };
     </script>
 </body>
 </html>
-
