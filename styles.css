@@ -34,16 +34,16 @@ nav a {
     font-weight: bold;
 }
 
-.sidebar {
+.sidebar, .main, .aside {
     background-color: #f0f0f0;
     padding: 20px;
-    margin-bottom: 20px;
+    flex: 1; /* Allows the columns to share space evenly */
 }
 
-.main, .aside {
-    background-color: white;
-    padding: 20px;
-    margin-bottom: 20px;
+.main-content {
+    display: flex; /* Enables flexbox layout */
+    justify-content: space-around; /* Distributes space between and around content items */
+    align-items: start; /* Aligns items to the start of the flex container */
 }
 
 table {
@@ -83,5 +83,9 @@ img {
     img {
         max-width: 100%;
         height: auto;
+    }
+
+    .main-content {
+        flex-direction: column; /* Stacks the flex items vertically on small screens */
     }
 }
