@@ -25,12 +25,13 @@
     <main>
         <section class="about-me">
             <h2>About Me</h2>
-            <p>Your introduction here...</p>
-            <img src="yourphoto.jpg" alt="Your Photo">
+            <p>Here is a 200-word introduction about yourself. This introduction does not have to be very formal but should provide visitors with a good sense of who you are and what you do.</p>
+            <img src="yourphoto.jpg" alt="A photo of yourself">
         </section>
     </main>
     <aside>
-        <form>
+        <h3>Contact Me</h3>
+        <form id="contactForm">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name"><br>
             <label for="email">Email:</label>
@@ -38,11 +39,27 @@
             <label for="message">Message:</label>
             <textarea id="message" name="message"></textarea><br>
             <button type="submit">Submit</button>
-            <button type="reset">Clear</button>
+            <button type="button" onclick="document.getElementById('contactForm').reset();">Clear</button>
         </form>
     </aside>
     <footer>
         <p>© 2024 by Your Website. Proudly created with YourWebSite.com</p>
     </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById('contactForm').addEventListener('submit', function(event) {
+                var name = document.getElementById('name').value;
+                var email = document.getElementById('email').value;
+                var message = document.getElementById('message').value;
+                if (!name || !email || !message) {
+                    alert("Please fill out all fields.");
+                    event.preventDefault();
+                } else {
+                    alert("Thank you for your message, " + name + "!");
+                    this.reset();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
