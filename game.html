@@ -1,1 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Quiz Game</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="portfolio.html">Portfolio</a> |
+        <a href="game.html">Game</a>
+    </nav>
+    <main>
+        <h2>Test your knowledge!</h2>
+        <form id="quizForm">
+            <div class="question">
+                <p>1. What is the capital of France?</p>
+                <select id="question1">
+                    <option value="">--Please choose an option--</option>
+                    <option value="Paris">Paris</option>
+                    <option value="London">London</option>
+                    <option value="Berlin">Berlin</option>
+                    <option value="Madrid">Madrid</option>
+                </select>
+            </div>
+
+            <!-- More questions can be added here following the same structure -->
+
+            <button type="submit">Submit Answers</button>
+        </form>
+    </main>
+    <footer>
+        <p>© 2024 by Your Website. Proudly created with YourWebSite.com</p>
+    </footer>
+    <script>
+        document.getElementById('quizForm').onsubmit = function(event) {
+            event.preventDefault(); // Prevent form from auto submitting
+            var score = 0;
+            var answers = {
+                question1: "Paris",
+                // Add more answers as needed
+            };
+
+            if (document.getElementById('question1').value === answers.question1) {
+                score += 20;
+            }
+
+            // Check other questions similarly and update the score
+
+            alert("Your final score is: " + score);
+        };
+    </script>
+</body>
+</html>
 
